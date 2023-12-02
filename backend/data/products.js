@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Open Mic Night',
     image: '/images/product-1.jpg',
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Art Case Show',
     image: '/images/product-2.jpg',
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: '3',
     name: 'The Future Of Communication',
     image: '/images/product-3.jpg',
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '4',
     name: 'Summer Camp For Earth Warriors',
     image: '/images/product-4.jpg',
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '5',
     name: 'Fall Festival',
     image: '/images/product-5.jpg',
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: '6',
     name: ' Electro Beats',
     image: '/images/product-6.jpg',
     description:
