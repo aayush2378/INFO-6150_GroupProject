@@ -31,3 +31,10 @@ const Product = ({ product }) => {
 };
 
 export default Product;
+
+{/* <Card.Body>
+<Link to={`/product/${product._id}`}>
+<Card.Title as='div' className='product-title'>
+    <strong>{product.name}</strong>
+  </Card.Title>
+</Link> */}
