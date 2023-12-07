@@ -88,7 +88,7 @@ return (
             Go Back
         </Link>
         <FormContainer>
-            <h1>Edit Product</h1>
+            <h1>Edit Event</h1>
             {loadingUpdate && <Loader />}
             {isLoading ? (
                 <Loader />

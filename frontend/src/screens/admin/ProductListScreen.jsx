@@ -4,7 +4,9 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import {
-  useGetProductsQuery, useCreateProductMutation
+  useGetProductsQuery, 
+  useCreateProductMutation,
+  useDeleteProductMutation
 } from '../../slices/productsApiSlice';
 import { toast } from 'react-toastify';
 
@@ -14,7 +16,7 @@ const { data: products, isLoading, error, refetch } = useGetProductsQuery();
 const [createProduct, { isLoading: loadingCreate }] =
 useCreateProductMutation();
 const createProductHandler = async () => {
-    if (window.confirm('Are you sure you want to create a new product?')) {
+    if (window.confirm('Are you sure you want to create a new Event?')) {
       try {
         await createProduct();
         refetch();
@@ -23,31 +25,36 @@ const createProductHandler = async () => {
       }
     }
   };
+
+  const [deleteProduct, { isLoading: loadingDelete }] =
+  useDeleteProductMutation();
+
 const deleteHandler = async (id) => {
-    // if (window.confirm('Are you sure')) {
-    //   try {
-    //     await deleteProduct(id);
-    //     refetch();
-    //   } catch (err) {
-    //     toast.error(err?.data?.message || err.error);
-    //   }
-    // }
+    if (window.confirm('Are you sure?')) {
+      try {
+        await deleteProduct(id);
+        toast.success('Event deleted')
+        refetch();
+      } catch (err) {
+        toast.error(err?.data?.message || err.error);
+      }
+    }
   };
   return (
     <>
       <Row className='align-items-center'>
         <Col>
-          <h1>Products</h1>
+          <h1>Events</h1>
         </Col>
         <Col className='text-end'>
           <Button className='btn-sm m-3' onClick={createProductHandler}>
-            <FaEdit /> Create Product
+            <FaEdit /> Create Event
           </Button>
         </Col>
       </Row>
 
       {loadingCreate && <Loader />}
-      {/* {loadingDelete && <Loader />} */}
+      {loadingDelete && <Loader />}
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -82,7 +89,7 @@ const deleteHandler = async (id) => {
                     <Button
                       variant='danger'
                       className='btn-sm'
-                    //   onClick={() => deleteHandler(product._id)}
+                       onClick={() => deleteHandler(product._id)}
                     >
                       <FaTrash style={{ color: 'white' }} />
                     </Button>

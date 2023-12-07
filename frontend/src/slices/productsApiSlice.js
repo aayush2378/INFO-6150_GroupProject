@@ -37,7 +37,14 @@ import { apiSlice } from "./apiSlice";
             body: data,
           }),
         }),
+        deleteProduct: builder.mutation({
+          query: (productId) => ({
+            url: `${PRODUCTS_URL}/${productId}`,
+            method: 'DELETE',
+          }),
+          providesTags: ['Product'],
+        }),
     }),
  });
 
- export const {useGetProductsQuery, useGetProductDetailsQuery, useCreateProductMutation, useUpdateProductMutation, useUploadProductImageMutation} = productApiSlice;
+ export const {useGetProductsQuery, useGetProductDetailsQuery, useCreateProductMutation, useUpdateProductMutation, useUploadProductImageMutation, useDeleteProductMutation} = productApiSlice;
