@@ -67,7 +67,7 @@ const LoginScreen = () => {
 
         <Button
           type="submit"
-          variant="primary"
+          variant="outline-info"
           className="mt-2"
           disabled={isLoading}
         >

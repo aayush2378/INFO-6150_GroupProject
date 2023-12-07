@@ -31,7 +31,7 @@ const Header = () => {
   
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
+      <Navbar bg="info" variant="dark" expand="md" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -43,7 +43,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
             <SearchBox />
-              <LinkContainer to="/cart">
+              <LinkContainer to="/cart" style={{color: "#FFFF"}}>
                 <Nav.Link>
                   <FaShoppingCart /> Cart
                   {
