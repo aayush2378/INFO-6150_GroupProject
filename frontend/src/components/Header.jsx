@@ -5,8 +5,8 @@ import { LinkContainer } from "react-router-bootstrap";
 import logo from "../assets/logo_icon.png";
 import {useLogoutMutation} from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
-import SearchBox from './SearchBox';
 import { useSelector, useDispatch } from 'react-redux';
+import SearchBox from './SearchBox';
 import { resetCart } from '../slices/cartSlice';
 
 const Header = () => {
@@ -31,7 +31,7 @@ const Header = () => {
   
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
+      <Navbar bg="info" variant="dark" expand="md" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -43,7 +43,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
             <SearchBox />
-              <LinkContainer to="/cart">
+              <LinkContainer to="/cart" style={{color: "#FFFF"}}>
                 <Nav.Link>
                   <FaShoppingCart /> Cart
                   {

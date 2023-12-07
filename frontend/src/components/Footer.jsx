@@ -6,11 +6,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark text-light py-4">
+    <footer className="bg-info text-light py-4">
       <Container>
         <Row>
           <Col className='text-center'>
-            <p className="mb-1">Connect With Us:</p>
+            <p className="mb-1">Connect with us:</p>
             <div className="mb-3">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-light mx-2"><FaFacebook /></a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-light mx-2"><FaTwitter /></a>
@@ -18,7 +18,7 @@ const Footer = () => {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-light mx-2"><FaInstagram /></a>
             </div>
             <p className="mb-0">Eventure &copy; {currentYear}</p>
-            <p className="mb-0">All Rights Reserved</p>
+            <p className="mb-0">All rights reserved.</p>
           </Col>
         </Row>
       </Container>

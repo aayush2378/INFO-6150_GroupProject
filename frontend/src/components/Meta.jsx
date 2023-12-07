@@ -12,8 +12,8 @@ const Meta = ({ title, description, keywords }) => {
 
 Meta.defaultProps = {
   title: 'Welcome To Eventure',
-  description: 'We sell the best event tickets for cheap',
-  keywords: 'events, buy tickets, cheap events',
+  description: 'We sell the best events for cheap',
+  keywords: 'events, buy events, cheap events',
 };
 
 export default Meta;
