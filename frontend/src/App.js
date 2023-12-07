@@ -15,7 +15,6 @@ const App = () => {
     const expirationTime = localStorage.getItem('expirationTime');
     if (expirationTime) {
       const currentTime = new Date().getTime();
-      
       if (currentTime > expirationTime) {
         dispatch(logout());
       }
