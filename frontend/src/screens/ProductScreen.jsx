@@ -11,6 +11,7 @@ import {
   Button,
   Form,
 } from 'react-bootstrap';
+import Meta from '../components/Meta';
 import { toast } from 'react-toastify';
 import {
   useGetProductDetailsQuery,
@@ -77,6 +78,7 @@ const ProductScreen = () => {
         </Message>
       ) : (
         <>
+        <Meta title={product.name} description={product.description} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
