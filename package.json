@@ -12,6 +12,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}",
     "proxy": "http://localhost:5000/"
   },
   "author": "",
