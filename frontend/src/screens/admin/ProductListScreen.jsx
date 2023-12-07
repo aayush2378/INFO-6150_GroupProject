@@ -1,10 +1,8 @@
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-import { useParams } from 'react-router-dom';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
-import Paginate from '../../components/Paginate';
 import {
   useGetProductsQuery, 
   useCreateProductMutation,
@@ -13,11 +11,7 @@ import {
 import { toast } from 'react-toastify';
 
 const ProductListScreen = () => {
-  const { pageNumber } = useParams();
-
-  const { data, isLoading, error, refetch } = useGetProductsQuery({
-    pageNumber,
-  });
+const { data: products, isLoading, error, refetch } = useGetProductsQuery();
 
 const [createProduct, { isLoading: loadingCreate }] =
 useCreateProductMutation();
@@ -79,7 +73,7 @@ const deleteHandler = async (id) => {
               </tr>
             </thead>
             <tbody>
-            {data.products.map((product) => (
+              {products.map((product) => (
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
@@ -104,7 +98,7 @@ const deleteHandler = async (id) => {
               ))}
             </tbody>
           </Table>
-          <Paginate pages={data.pages} page={data.page} isAdmin={true} />
+          {/* <Paginate pages={data.pages} page={data.page} isAdmin={true} /> */}
         </>
       )}
     </>
